@@ -1,4 +1,4 @@
-🖥️ Keylogger – Educational Python Project
+#🖥️ Keylogger – Educational Python Project
 
 
 
@@ -31,7 +31,8 @@ Cleanup – Deletes log file after successful email transmission.
 
 Persistence – Keeps running silently until manually stopped.
 
-🚀 Getting Started
+#🚀 Getting Started
+
 📋 Prerequisites
 
 Python 3.x
